@@ -1,10 +1,12 @@
 const folders = document.querySelectorAll(".folder");
-const folderWrappers = document.querySelectorAll(".folder-wrapper");
+const folderWrapper = document.querySelectorAll(".folder-wrapper");
 
 let isMobile = window.innerWidth < 1000;
 
 function setInitialPosition() {
-    gsap.set(folderWrappers, { y: isMobile ? 0 : 25 });
+    gsap.set(folderWrapper, {
+        y: isMobile ? 0 : 25,
+    });
 }
 
 folders.forEach((folder, index) => {
@@ -19,10 +21,10 @@ folders.forEach((folder, index) => {
             }
         });
 
-        gsap.to(folderWrappers[index], {
+        gsap.to(folderWrapper[index], {
             y: 0,
             duration: 0.25,
-            ease: "back.out(1.7",
+            ease: "back.out(1.7)",
         });
 
         previewImages.forEach((img, imgIndex) => {
@@ -40,7 +42,7 @@ folders.forEach((folder, index) => {
                 y: "-100%",
                 rotation: rotation,
                 duration: 0.25,
-                ease: "back,out(1.7)",
+                ease: "back.out(1.7)",
                 delay: imgIndex * 0.025,
             });
         });
@@ -53,10 +55,10 @@ folders.forEach((folder, index) => {
             siblingFolder.classList.remove("disabled");
         });
 
-        gsap.to(folderWrappers[index], {
+        gsap.to(folderWrapper[index], {
             y: 25,
             duration: 0.25,
-            ease: "back.out(1.7",
+            ease: "back.out(1.7)",
         });
 
         previewImages.forEach((img, imgIndex) => {
@@ -64,7 +66,7 @@ folders.forEach((folder, index) => {
                 y: "0%",
                 rotation: 0,
                 duration: 0.5,
-                ease: "back,out(1.7)",
+                ease: "back.out(1.7)",
                 delay: imgIndex * 0.05,
             });
         });
@@ -83,7 +85,10 @@ window.addEventListener("resize", () => {
         });
 
         const allPreviewImages = document.querySelectorAll(".folder-preview-img");
-        gsap.set(allPreviewImages, { y: "0%", rotation: 0 });
+        gsap.set(allPreviewImages, {
+            y: "0%",
+            rotation: 0,
+        });
     }
 });
 
