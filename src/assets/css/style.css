@@ -15,13 +15,14 @@ a {
     --fg: #0f0f0f;
     --variant-1: #ffc640;
     --variant-2: #d5d9d2;
-    --variant-3: #b0b3ad;
+    --variant-3: #f3c493;
     --disabled-folder-bg: #e8e8e4;
     --disabled-folder-fg: #b0b3ad;
 }
 
 body {
-    background-color: var(--bg);
+    background: url(../images/bg.jpg) 50% 50% no-repeat;
+    background-size: cover;
     color: var(--fg);
 }
 
@@ -32,15 +33,13 @@ img {
 }
 
 h1 {
-    font-family: "DM Sans", sans-serif;
     font-size: 2.75rem;
     font-weight: 400;
 }
 
 p {
     text-transform: uppercase;
-    font-family: "DM Mono", sans-serif;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     font-weight: 500;
 }
 
